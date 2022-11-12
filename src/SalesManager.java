@@ -23,14 +23,14 @@ public class SalesManager {
         }
         return min;
     }
+
     public int average(){
         int amount=0;
         for (long sale:sales) {
-            if (min() != sale && max() != sale) {
-                amount += sale;
-            }
+            amount += sale;
         }
-        return amount/sales.length;
+        amount -=min()+max();
+        return amount/(sales.length-2);
     }
 }
 
